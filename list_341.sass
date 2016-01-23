@@ -1,0 +1,27 @@
+@mixin fun-box($color, $width: 1px) {
+  border: { 
+    color: $color;
+    width: $width;
+    @if $color == black { 
+      style: dashed;
+    }
+    @else if $color == red { 
+      style: double; 
+    }
+    @else { 
+      style: solid;
+    }
+  }
+}
+
+div.body { 
+  @include fun-box(black);
+}
+
+div.subject { 
+  @include fun-box(red);
+}
+
+div.sontents { 
+  @include fun-box(green);
+}

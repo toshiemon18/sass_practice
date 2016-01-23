@@ -1,0 +1,22 @@
+@mixin dashed-border($color, $width: 1px) { 
+  border: { 
+    color: $color;
+    width: $width;
+    style: dashed;
+  }
+}
+
+@mixin shadow-box($shadows...) { 
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+div.title { 
+  @include dashed-border(#13A, 2px);
+}
+
+div.footnote { 
+  @include dashed-border(#111);
+  @include shadow-box(0px 4px 5px #666, 2px 6px 10px #999);
+}
